@@ -82,9 +82,7 @@ void variableDeclarations()
     bool isReady = true;
     bool containsNuts = false;
 
-    ignoreUnused(age, stock, bookPages, midiNote, lotteryPrice, starsObserved, tempInCelsius, tempInFahrenheit, taxes, threshold, decibels, reverbTime, musicNote, nameFirstLetter, answer, taskDone, isReady, containsNuts);
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, age, stock, bookPages, midiNote, lotteryPrice, starsObserved, tempInCelsius, tempInFahrenheit, taxes, threshold, decibels, reverbTime, musicNote, nameFirstLetter, answer, taskDone, isReady, containsNuts); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -103,46 +101,46 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 int answerToEverything(bool knowsQuestion, float timeToCalculate = 7.5f, int answer = 42)
 {
-  ignoreUnused(knowsQuestion, timeToCalculate, answer);
-  return {};
+    ignoreUnused(knowsQuestion, timeToCalculate, answer);
+    return {};
 }
 /*
  2)
  */
 double convertCurrency(char convertFrom, char convertTo, float amount, bool roundUp = false)
 {
-  ignoreUnused(convertFrom, convertTo, amount, roundUp);
-  return {};
+    ignoreUnused(convertFrom, convertTo, amount, roundUp);
+    return {};
 }
 /*
  3)
  */
 void delayLoudspeakers(int maxDistance, bool isOutdoor = true, float temperature = 20.0f)
 {
-  ignoreUnused(maxDistance, isOutdoor, temperature);
+    ignoreUnused(maxDistance, isOutdoor, temperature);
 }
 /*
  4)
  */
 bool needsPhantomPower(char transducerType = 'c')
 {
-  ignoreUnused(transducerType);
-  return {};
+    ignoreUnused(transducerType);
+    return {};
 }
 /*
  5)
  */
 int getSurfaceArea(int width = 0, int height = 1)
 {
-  ignoreUnused(width, height);
-  return {};
+    ignoreUnused(width, height);
+    return {};
 }
 /*
  6)
  */
 void waveLength(float lambda, float frequency, double speedOfSound = 343.6)
 {
-  ignoreUnused(lambda, frequency, speedOfSound);  
+    ignoreUnused(lambda, frequency, speedOfSound);  
 }
 /*
  7)
@@ -171,8 +169,8 @@ void vrTrackingSensor(char turnDirection = 'f', bool raiseHead = false, bool low
  */
  int amplifySignal(int input, float factor = 0.5f)
  {
-     ignoreUnused(input, factor);
-     return {};
+    ignoreUnused(input, factor);
+    return {};
  }
 
 /*
@@ -215,8 +213,7 @@ int main()
     //10)
     auto newVolume = amplifySignal(-8, 1.5f);
     
-    ignoreUnused(carRented);
-    ignoreUnused(answer, currencyValue,connectMic, roomSize, helicopterSpecs, newVolume);
+    ignoreUnused(carRented, answer, currencyValue, connectMic, roomSize, helicopterSpecs, newVolume);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
