@@ -16,13 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
+ - int
+ - unsigned int
+ - float
+ - double
+ - char
+ - bool 
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -59,10 +58,31 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int age = 42;
+    int stock = 150;
+    int bookPages = 386;
 
+    unsigned int midiNote = 64;
+    unsigned long int lotteryPrice = 3984675295;
+    unsigned int starsObserved = 65534; 
+
+    double tempInCelsius = 12.55;
+    double tempInFahrenheit = 54.59;
+    double taxes = 27.8;
+
+    float threshold = -12.5f;
+    float decibels = -18.0f;
+    float reverbTime = 2.2f;
+
+    char musicNote = 'E';
+    char nameFirstLetter = 'N';
+    char answer = 'y';
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    bool taskDone = false;
+    bool isReady = true;
+    bool containsNuts = false;
+
+    ignoreUnused(number, age, stock, bookPages, midiNote, lotteryPrice, starsObserved, tempInCelsius, tempInFahrenheit, taxes, threshold, decibels, reverbTime, musicNote, nameFirstLetter, answer, taskDone, isReady, containsNuts); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,42 +99,79 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int answerToEverything(bool knowsQuestion, float timeToCalculate = 7.5f, int answer = 42)
+{
+    ignoreUnused(knowsQuestion, timeToCalculate, answer);
+    return {};
+}
 /*
  2)
  */
-
+double convertCurrency(char convertFrom, char convertTo, float amount, bool roundUp = false)
+{
+    ignoreUnused(convertFrom, convertTo, amount, roundUp);
+    return {};
+}
 /*
  3)
  */
-
+void delayLoudspeakers(int maxDistance, bool isOutdoor = true, float temperature = 20.0f)
+{
+    ignoreUnused(maxDistance, isOutdoor, temperature);
+}
 /*
  4)
  */
-
+bool needsPhantomPower(char transducerType = 'c')
+{
+    ignoreUnused(transducerType);
+    return {};
+}
 /*
  5)
  */
-
+int getSurfaceArea(int width = 0, int height = 1)
+{
+    ignoreUnused(width, height);
+    return {};
+}
 /*
  6)
  */
-
+void waveLength(float lambda, float frequency, double speedOfSound = 343.6)
+{
+    ignoreUnused(lambda, frequency, speedOfSound);  
+}
 /*
  7)
  */
-
+void print(int numPages, bool inColor = true, bool enoughInk = true)
+{
+    ignoreUnused(numPages, inColor, enoughInk);
+}
 /*
  8)
  */
-
+float thrustHelicopter(float powerFrontRotor, float powerRearRotor, int numBlades = 3)
+{
+    ignoreUnused(powerFrontRotor, powerRearRotor, numBlades);
+    return {};
+}
 /*
  9)
  */
-
+void vrTrackingSensor(char turnDirection = 'f', bool raiseHead = false, bool lowerHead = false)
+{
+    ignoreUnused(turnDirection, raiseHead, lowerHead);
+}
 /*
  10)
  */
+int amplifySignal(int input, float factor = 0.5f)
+{
+    ignoreUnused(input, factor);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -136,27 +193,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto answer = answerToEverything(false, 1.79f, 42);
     //2)
-    
+    auto currencyValue = convertCurrency('d', 'e', 87.99f, true);
     //3)
-    
+    delayLoudspeakers(200, true, 24.3f);
     //4)
-    
+    auto connectMic = needsPhantomPower('d');
     //5)
-    
+    auto roomSize = getSurfaceArea(200, 11);
     //6)
-    
+    waveLength(0.78f, 440.0f, 343.6);
     //7)
-    
+    print(4, false, true);
     //8)
-    
+    auto helicopterSpecs = thrustHelicopter(7.3f, 5.2f, 3);
     //9)
-    
+    vrTrackingSensor('r', true, false);
     //10)
+    auto newVolume = amplifySignal(-8, 1.5f);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, answer, currencyValue, connectMic, roomSize, helicopterSpecs, newVolume);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
