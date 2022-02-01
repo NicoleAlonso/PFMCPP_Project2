@@ -167,11 +167,11 @@ void vrTrackingSensor(char turnDirection = 'f', bool raiseHead = false, bool low
 /*
  10)
  */
- int amplifySignal(int input, float factor = 0.5f)
- {
+int amplifySignal(int input, float factor = 0.5f)
+{
     ignoreUnused(input, factor);
     return {};
- }
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
